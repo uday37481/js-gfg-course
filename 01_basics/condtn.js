@@ -10,13 +10,11 @@ const result = marks >= 85 ? "A++ Grade !!" :
 console.log (result);
 
 
-
 let phy = 80, math=85, chem =78 ;
 if( !(phy >= 85 || math > 75))
     console.log("Eligible for CET");
 else
    console.log("Not Eligible for CET");
-
 
 
 //                           Nullish Coalescing
@@ -56,4 +54,13 @@ any ();
 
 let cube = a => a*a*a ;  
 console.log(cube(5));
+
+
+//                            Ternary Operations
+
+
+const totalMarks = 80;
+
+const result = totalMarks < 75 ? "You achieved First Class." : "You achieved Distinction !!! ";
+console.log(result);
 
