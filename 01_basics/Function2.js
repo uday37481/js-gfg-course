@@ -8,7 +8,7 @@ let factorial = function fact(n)
     return n * fact(n - 1);
 };
 
-console.log(factorial(5)); // here comes the call
+console.log(factorial(6)); // here comes the call
 
 
 
