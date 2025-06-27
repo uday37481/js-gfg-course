@@ -82,8 +82,37 @@ How to store a function in a variable and call it.
 
 
 
-7️⃣
+7️⃣ File: function2.js
+This file introduces special types of functions and how they work in JavaScript. You’ll learn how functions can be called immediately, delayed, or used in response to user actions.
 
-8️⃣
+🧠 What I learnt :
+Named function expression (with recursion)
+Callback functions
+IIFE (Immediately Invoked Function Expression)
+Event handling in the browser
+
+✅ Key Examples:
+🧮 Factorial using a Named Function
+⏳ Callback Function with Delay
+⚡ IIFE (Runs Immediately After Definition)
+🖱️ Event Handling on a Web Page
+
+
+
+8️⃣ File: function3.js
+This file explores different types of functions that return values, including arrow functions, pure functions, and loops inside functions.
+
+🧠 What I learnt :
+Writing functions that return results
+Using arrow functions for short syntax
+Ternary operators inside functions
+Using loops in functions for calculations
+
+✅ Key Examples:
+➗ Pure Function to Divide Two Numbers
+🔁 Arrow Function to Find Remainder
+🔢 Ternary Inside Arrow Function
+
+
 
 9️⃣
