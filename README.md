@@ -1,118 +1,278 @@
-# js-gfg-course
-A code repo for JavaScript concepts
+Github Password : uvnagar370823
 
-1️⃣ File: variable.js
-This file teaches how to use variables in JavaScript and how to show output in the console.
+Asgn 2 :
 
-🔍 What I learnt :
-Using console.log() to print output.
-Creating variables using var, let, and const.
-Assigning and re-using values.
-Basic text and number outputs.
+Go to File
 
+Edit 
+Create new application
+
+Create new folder in Desktop
 
 
 
-2️⃣ File: Arithmetic.js
-This file focuses on arithmetic and comparison operations in JavaScript.
+ASGN 4 :Why is key pair needed ?
 
-🔍 What I learnt :
-Basic math: add, subtract, multiply, divide.
-How numbers and strings behave differently.
-Comparison operations: greater than, less than, equal, etc.
-Using variables with numbers and strings.
-How to handle user input safely.
+Aap agar server se communicate karoge toh secure hota hai
+Security ke liye hum SSH protocol use karte hai Port 22
+To verify that we need public & private key
+Private key - Aapke paas    Public key - server
 
-
-
-
-3️⃣ File: condtn.js
-This file helps you understand conditional statements, functions, and loops in JavaScript.
-
-🔍 What I learnt :
-Use of if, else, and ternary (? :) statements.
-Check eligibility based on marks.
-Use of the ?? (nullish coalescing) operator.
-Writing and calling functions.
-Arrow functions.
-Looping through characters in a string.
+Post 22 pe admin ke paas SSH protoocol
+Parr website pe users ki traffic ke liye Port 80 HTTP 
+0.0.0/0 - IPv4 
 
 
 
+Change yourself to the root user              sudo su -
+Update the system                                    yum update -y
 
-4️⃣ File: loops.js
-This file demonstrates different types of loops in JavaScript and how to use them.
+Download all packages & web server         yum install -y httpd
 
-🧠 What I learnt :
-for loop: repeats a task a certain number of times.
-while loop: repeats while a condition is true.
-do...while loop: always runs at least once, then checks the condition.
-How to loop through the characters in a string.
+systemctl status httpd
+systemctl enable httpd       
+systemctl start httpd
 
+systemctl status start enable httpd
+mkdir temp
+cd temp/
 
+Downl dir          wget https://gitlab.com/html5up-nsm-templates/massively/-/archive/master/massively-master.zip
+ls -lrt
+unzip massivley.zip
+ls -lrt
+cd massivley-master  
+ls -lrt
 
-5️⃣ File: pattern.js
-This file teaches you how to use loops to print fun patterns using stars (*) and numbers.
+Move this entire dir to ww.http : mv * /var/www/html/
+cd /var/www/html/
+ls-lrt
 
-🧠 What I learnt :
+Copy public IPv4 address & pass in web
 
-How to repeat characters using loops.
-Create triangle patterns with * or numbers.
-Build patterns like Floyd's triangle.
-Use nested loops for complex output.
-
-✅ Example Patterns:
-Increasing and decreasing stars
-Number triangle
-Floyd's Triangle
-Full diamond like number triangle
+Allow Security groups SSH, HTTP, HTTPS - 0.0.0/0 (everywhere)
 
 
 
 
-6️⃣ File: function.js
-This file introduces functions — a way to reuse blocks of code.
+ASGN 3 : Elastic Beanstalk
 
-🧠 What I learnt :
-Defining and calling functions.
-Passing values (arguments) to functions.
-Anonymous functions (functions without a name).
-How to store a function in a variable and call it.
+Create role : Elastic Beanstalk - Environment
 
+Choose a Platform : In Python
+
+Sample Application
 
 
-
-7️⃣ File: function2.js
-This file introduces special types of functions and how they work in JavaScript. You’ll learn how functions can be called immediately, delayed, or used in response to user actions.
-
-🧠 What I learnt :
-Named function expression (with recursion)
-Callback functions
-IIFE (Immediately Invoked Function Expression)
-Event handling in the browser
-
-✅ Key Examples:
-🧮 Factorial using a Named Function
-⏳ Callback Function with Delay
-⚡ IIFE (Runs Immediately After Definition)
-🖱️ Event Handling on a Web Page
+aws-elasticbeanstalk-ec2-role
+AWS Service: ec2
+-
+aws-elasticbeanstalk-service-role
 
 
 
-8️⃣ File: function3.js
-This file explores different types of functions that return values, including arrow functions, pure functions, and loops inside functions.
-
-🧠 What I learnt :
-Writing functions that return results
-Using arrow functions for short syntax
-Ternary operators inside functions
-Using loops in functions for calculations
-
-✅ Key Examples:
-➗ Pure Function to Divide Two Numbers
-🔁 Arrow Function to Find Remainder
-🔢 Ternary Inside Arrow Function
 
 
+ASGN 4
 
-9️⃣
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Uday>ssh -i mykey1.pem ec2-user@3.111.47.149
+
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+
+C:\Users\Uday>cd Downloads
+
+
+C:\Users\Uday\Downloads>scp -i mykey1.pem mykey1.pem ec2-user@3.111.47.149:/home/ec2-user/
+mykey1.pem                                                                            100% 1674   106.7KB/s   00:00
+
+C:\Users\Uday\Downloads>ssh -i mykey1.pem ec2-user@3.111.47.149
+ 
+[ec2-user@ip-172-31-0-39 ~]$ ls
+mykey1.pem
+
+[ec2-user@ip-172-31-0-39 ~]$ echo "This file was created in VM1" > file.txt
+
+[ec2-user@ip-172-31-0-39 ~]$ chmod 400 file.txt
+
+[ec2-user@ip-172-31-0-39 ~]$ chmod 400 mykey1.pem
+
+[ec2-user@ip-172-31-0-39 ~]$ scp -i mykey1.pem file.txt ec2-user@13.201.74.243:/home/ec2-user/
+
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '13.201.74.243' (ED25519) to the list of known hosts.
+file.txt                                                                              100%   29    29.1KB/s   00:00
+
+[ec2-user@ip-172-31-0-39 ~]$ ssh -i mykey1.pem ec2-user@13.201.74.243
+
+[ec2-user@ip-172-31-4-20 ~]$ ls
+file.txt
+
+[ec2-user@ip-172-31-4-20 ~]$ cat file.txt
+This file was created in VM1
+
+
+ASGN 5
+
+Create VM
+
+e2.micro
+key-value pair
+Enable SSH & HTTP traffic
+Connect to console
+echo "Hello world"
+
+
+
+ASGN 6
+
+AWS Amplify 
+
+Deploy an app
+
+HTML Template - Github or without Git
+
+
+
+ASGN 7
+
+1. Create a Bucket
+
+
+2. IAM :
+Create Role :  Use case - EC2
+
+
+Roles : AmazonS3FullAccess
+           AWSLambda_FullAccess
+           AWSLambdaBasicExecutionRole
+
+Role Name : 
+
+
+3.  AWS Lambda : Create a function
+
+Runtime :        python 3.12
+
+
+Default execution role - Use an existing role - Role Name in IAM
+
+4. Add a Trigger
+
+Select a source as S3
+Bucket - Bucket Name(created 1st)
+I acknowledge
+
+
+Now change code :
+
+import json
+import boto3
+
+def lambda_handler(event, context):
+
+    # Log the event to see its structure
+    print("Received event: " + json.dumps(event, indent=2))
+
+    # Get the object from the event
+    s3 = boto3.client('s3')
+
+    bucket = event['Records'][0]['s3']['bucket']['name']
+    key = event['Records'][0]['s3']['object']['key']
+
+    try:
+        # Fetch the file from S3
+        response = s3.get_object(Bucket=bucket, Key=key)
+
+        # Read file content
+        content = response['Body'].read().decode('utf-8')
+
+        print("File content:")
+        print(content)
+
+        return {
+            'statusCode': 200,
+            'body': json.dumps('File processed successfully')
+        }
+
+    except Exception as e:
+        print(e)
+
+        print(f"Error getting object {key} from bucket {bucket}")
+
+        raise e
+
+Deploy the code
+
+
+test file :
+
+{
+  "Records": [
+    {
+      "s3": {
+        "bucket": {
+          "name": "bucketudy"
+        },
+        "object": {
+          "key": "file.txt"
+        }
+      }
+    }
+  ]
+}
+ 
+Now go to S3 : Select your bucket and upload 1 file
+
+Now go to Lambda - Monitor CloudWatch logs
+
+Click on log stream
+
+
+
+
+
+Asgn 8
+ 
+1. Create bucket permission properties
+
+2. Properties enable kardo index.html file ka naam
+
+3. Permission mai jao, policies mai code dallo
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::bucket-name/*"
+        }
+    ]
+}
+
+
+
+4. Firebase new project, app mai jai, new web app, authentication email/pasword enable, app ke setting mai API copy karlo
+
+
+  apiKey: "AIzaSyDcgJQgENVnobTcKLA339_7X-Ydlmq-VxA",
+  authDomain: "encoded-phalanx-486310-p6.firebaseapp.com",
+  projectId: "encoded-phalanx-486310-p6",
+  storageBucket: "encoded-phalanx-486310-p6.firebasestorage.app",
+  messagingSenderId: "245862233082",
+  appId: "1:245862233082:web:15bc23e65b13b3117a2a43",
+  measurementId: "G-1S23VLBGNN"
+
+
+
+5. API code copy , Paste in VS Code (script.js) (line 14)
+
+6. 3 file upload in S3 Bucket(index.html, style.css, script.js)  (Github repo: js-gfg-course)
+
+7. Properties mai static website mai jaake host karro
+
+
