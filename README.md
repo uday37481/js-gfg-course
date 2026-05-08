@@ -1,57 +1,21 @@
 Github Password : uvnagar370823
 
 Asgn 2 :
+Download GAE
 
-Go to File
+Download python.org version
 
-Edit 
+python-2.5.amd64.msi.asc
+
+Go to File - Edit preferences
+
+Python path -              C:\Python25\python.exe
+App Engine SDK :-     C:\Program Files (x86)\Google\google_appengine
+
+
 Create new application
 
-Create new folder in Desktop
-
-
-
-ASGN 4 :Why is key pair needed ?
-
-Aap agar server se communicate karoge toh secure hota hai
-Security ke liye hum SSH protocol use karte hai Port 22
-To verify that we need public & private key
-Private key - Aapke paas    Public key - server
-
-Post 22 pe admin ke paas SSH protoocol
-Parr website pe users ki traffic ke liye Port 80 HTTP 
-0.0.0/0 - IPv4 
-
-
-
-Change yourself to the root user              sudo su -
-Update the system                                    yum update -y
-
-Download all packages & web server         yum install -y httpd
-
-systemctl status httpd
-systemctl enable httpd       
-systemctl start httpd
-
-systemctl status start enable httpd
-mkdir temp
-cd temp/
-
-Downl dir          wget https://gitlab.com/html5up-nsm-templates/massively/-/archive/master/massively-master.zip
-ls -lrt
-unzip massivley.zip
-ls -lrt
-cd massivley-master  
-ls -lrt
-
-Move this entire dir to ww.http : mv * /var/www/html/
-cd /var/www/html/
-ls-lrt
-
-Copy public IPv4 address & pass in web
-
-Allow Security groups SSH, HTTP, HTTPS - 0.0.0/0 (everywhere)
-
+Create new folder in Desktop (Parent directory)
 
 
 
@@ -61,8 +25,7 @@ Create role : Elastic Beanstalk - Environment
 
 Choose a Platform : In Python
 
-Sample Application
-
+Sample Application :
 
 aws-elasticbeanstalk-ec2-role
 AWS Service: ec2
@@ -121,7 +84,11 @@ e2.micro
 key-value pair
 Enable SSH & HTTP traffic
 Connect to console
-echo "Hello world"
+
+Test commands :
+
+echo "Hello World"   pwd whoami   hostname  date   ls   ls -la   mkdir test-folder 
+cd test-folder     touch hello.txt       echo "AWS VM works!" > hello.txt
 
 
 
@@ -274,5 +241,172 @@ Asgn 8
 6. 3 file upload in S3 Bucket(index.html, style.css, script.js)  (Github repo: js-gfg-course)
 
 7. Properties mai static website mai jaake host karro
+
+script.js :-
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+import {
+
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut
+
+} from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyDcgJQgENVnobTcKLA339_7X-Ydlmq-VxA",
+  authDomain: "encoded-phalanx-486310-p6.firebaseapp.com",
+  projectId: "encoded-phalanx-486310-p6",
+  storageBucket: "encoded-phalanx-486310-p6.firebasestorage.app",
+  messagingSenderId: "245862233082",
+  appId: "1:245862233082:web:15bc23e65b13b3117a2a43",
+  measurementId: "G-1S23VLBGNN"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+window.registerUser = async function () {
+
+    const email =
+    document.getElementById("email").value;
+
+    const password =
+    document.getElementById("password").value;
+
+    try {
+
+        const userCredential =
+        await createUserWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+        document.getElementById("message")
+        .innerHTML =
+        "Registration Successful";
+
+        console.log(userCredential.user);
+
+    } catch(error) {
+
+        document.getElementById("message")
+        .innerHTML =
+        error.message;
+    }
+}
+
+window.loginUser = async function () {
+
+    const email =
+    document.getElementById("email").value;
+
+    const password =
+    document.getElementById("password").value;
+
+    try {
+
+        const userCredential =
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+        document.getElementById("message")
+        .innerHTML =
+        "Login Successful";
+
+        console.log(userCredential.user);
+
+    } catch(error) {
+
+        document.getElementById("message")
+        .innerHTML =
+        error.message;
+    }
+}
+
+window.logoutUser = async function () {
+
+    try {
+
+        await signOut(auth);
+
+        document.getElementById("message")
+        .innerHTML =
+        "Logout Successful";
+
+    } catch(error) {
+
+        document.getElementById("message")
+        .innerHTML =
+        error.message;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+Asgn 3 :
+
+ASGN 4 :Why is key pair needed ?
+
+Aap agar server se communicate karoge toh secure hota hai
+Security ke liye hum SSH protocol use karte hai Port 22
+To verify that we need public & private key
+Private key - Aapke paas    Public key - server
+
+Post 22 pe admin ke paas SSH protoocol
+Parr website pe users ki traffic ke liye Port 80 HTTP 
+0.0.0/0 - IPv4 
+
+
+
+Change yourself to the root user              sudo su -
+Update the system                                    yum update -y
+
+Download all packages & web server         yum install -y httpd
+
+systemctl status httpd
+systemctl enable httpd       
+systemctl start httpd
+
+systemctl status start enable httpd
+mkdir temp
+cd temp/
+
+Downl dir          wget https://gitlab.com/html5up-nsm-templates/massively/-/archive/master/massively-master.zip
+ls -lrt
+unzip massivley.zip
+ls -lrt
+cd massivley-master  
+ls -lrt
+
+Move this entire dir to ww.http : mv * /var/www/html/
+cd /var/www/html/
+ls-lrt
+
+Copy public IPv4 address & pass in web
+
+Allow Security groups SSH, HTTP, HTTPS - 0.0.0/0 (everywhere)
+
+
+
+
+
 
 
